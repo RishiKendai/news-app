@@ -1,0 +1,15 @@
+Customer facing
+-----
+latest news, weather update, live group chat, sports section
+
+Home
+Sports 
+About us 
+Contact us
+3 Latest news
+Chat box 
+
+Admin facing 
+-----
+Login using jwt 
+add, edit, delete news 

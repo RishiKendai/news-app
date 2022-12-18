@@ -1,0 +1,69 @@
+.login_section{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  min-width: 380px;
+  border-radius: 5px;
+  background-color: hsl(0 100% 100% / 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 3%;
+  box-shadow: 0 9px 29px hsl(0 0% 0% / 0.2);
+}
+h1 {
+  color: hsl(6 100% 60%);
+  margin-bottom: 2rem;
+}
+form label {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+form input {
+  min-width: 100%;
+  margin-bottom: 2rem;
+  font-size: 1.1em;
+  border-radius: 3px;
+  padding: 5px;
+  color: #181619;
+  background: hsl(0 100% 100% / 0.23);
+  border: 1.5px solid hsl(255 9% 9% / 0.44);
+  outline: none;
+}
+form input:hover,
+form input:focus {
+  border: 1.5px solid hsl(255 87% 58%);
+}
+
+.btn_wrapper {
+  display: flex;
+  min-width: 100%;
+  padding: 7px;
+  justify-content: space-around;
+}
+.btn {
+  background: none;
+  font-size: 1.1em;
+  padding: 7px 11px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  border: none;
+  font-weight: bolder;
+  text-decoration: none;
+  cursor: pointer;
+}
+.login_btn {
+  color: #ececec;
+  background-color: hsl(6 100% 60%);
+}
+.register_btn {
+  color: #191618;
+  color: hsl(8 100% 60%);
+  border: 1.5px solid hsl(6 100% 70%);
+}

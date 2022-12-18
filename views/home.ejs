@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><h3>update 24 * 7 admin</h3></div>
+      <ul>
+        <li><a class="active" href="./home.ejs">news form</a></li>
+        <li><a href="editNews">edit news</a></li>
+        <li onclick="handleLogout()">logout</li>
+      </ul>
+    </nav>
+    <div class="user_details">
+      <div class="detail_1"><label>Name:</label> <span><%= name %> </span></div>
+      <div class="detail_2">
+        <label>email:</label> <span><%= email %> </span>
+      </div>
+    </div>
+
+    <form action="">
+      <label>title</label>
+      <input type="text" name="title" />
+      <label>description</label>
+      <input type="text" name="description" />
+      <label>url</label>
+      <input type="text" name="url" />
+      <label>url To Image</label>
+      <input type="text" name="urlToImage" />
+      <label>published at</label>
+      <input type="text" name="publishedAt" />
+      <button>add</button>
+    </form>
+
+    <script>
+      const token = "<%= JSON.stringify(token) %>";
+      localStorage.setItem("token", token);
+
+      function handleLogout() {
+        localStorage.removeItem('token')
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "logout", false);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
