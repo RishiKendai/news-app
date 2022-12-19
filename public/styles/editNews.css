@@ -1,0 +1,161 @@
+.top_bar {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 9px;
+}
+.top_bar h3 {
+  font: 800 1.2em sans-serif;
+  color: #191718;
+  text-transform: capitalize;
+}
+.table {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.heading {
+  display: flex;
+  background-color: hsl(196 46% 9%);
+  padding: 8px;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 1.1px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  padding: 0 4px 6px 4px;
+  gap: 5px;
+}
+.row:nth-of-type(even) {
+  background-color: hsl(260 100% 80% / 0.2);
+}
+.record {
+  font: 400 0.9em/1.6 sans-serif;
+}
+.btn_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  width: 65px;
+  font: 700 1em sans-serif;
+  border-radius: 5px;
+}
+.edit {
+  background-color: #ffd900db;
+  color: #191718;
+}
+.delete {
+  background-color: #ff002bdb;
+  color: white;
+}
+.c1 {
+  flex: 1 1 20%;
+}
+.c2 {
+  flex: 1 1 50%;
+}
+.c3 {
+  flex: 1 1 15%;
+}
+.c4 {
+  flex: 1 1 15%;
+}
+
+.modal {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  background: hsl(0 0% 0% / 0.44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s;
+}
+.modal.active {
+  z-index: 1;
+  opacity: 1;
+}
+.inner {
+  background: hsl(0 0% 0% / 0.35);
+  backdrop-filter: blur(4px);
+  width: 370px;
+  padding: 13px 20px;
+}
+.inner label {
+  color: white;
+  text-transform: capitalize;
+  font: 400 0.9em sans-serif;
+  letter-spacing: 1.2px;
+}
+.input_div {
+  margin-bottom: 1.2rem;
+  background-color: hsl(0 100% 100% / 0.65);
+  backdrop-filter: blur(5px);
+  border-radius: 2px;
+  border: 1px solid hsl(10 20% 10% / 0.2);
+  padding: 6px;
+  overflow: hidden;
+}
+.input_div .input {
+  min-height: 50px;
+  max-height: 68px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  font: 400 1em sans-serif;
+  overflow-y: auto;
+}
+.input.description {
+  min-height: 68px;
+  max-height: 100px;
+}
+.input::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+  scroll-behavior: smooth;
+}
+
+.input::-webkit-scrollbar-thumb {
+  background: hsl(246 100% 70%);
+}
+
+._wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner button {
+  background-color: hsl(246 100% 70%);
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  width: 35%;
+  font: 600 1em sans-serif;
+  letter-spacing: 1.2px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.4s;
+}
+
+.inner button:active,
+.inner button:hover {
+  background-color: hsl(246 100% 66%);
+}

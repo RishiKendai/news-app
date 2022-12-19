@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    edit news
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit News</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/editNews.css" />
+    <script defer src="../js/editNews.js"></script>
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+      integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body onload="fetchData()">
+    <nav>
+      <div class="logo"><h3>update 24 * 7 admin</h3></div>
+      <ul>
+        <li><a href="./home.ejs">news form</a></li>
+        <li><a class="active" href="editNews">edit news</a></li>
+        <li onclick="handleLogout()">logout</li>
+      </ul>
+    </nav>
+    <div class="user_details">
+      <div class="detail_1"><label>Name:</label> <span><%= name %> </span></div>
+      <div class="detail_2">
+        <label>email:</label> <span><%= email %> </span>
+      </div>
+    </div>
+    <div class="top_bar">
+      <h3>news list</h3>
+    </div>
+
+    <div class="table">
+      <div class="heading">
+        <div class="c1">title</div>
+        <div class="c2">description</div>
+        <div class="c3">publishedAt</div>
+        <div class="c4">edit/del</div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="inner">
+        <label>title</label>
+        <div class="input_div">
+          <div class="input title" contenteditable="true" name="title"></div>
+        </div>
+        <label>description</label>
+        <div class="input_div">
+          <div
+            class="input description"
+            contenteditable="true"
+            name="description"
+          ></div>
+        </div>
+        <label>published at</label>
+        <div class="input_div">
+          <div
+            class="input publishedAt"
+            contenteditable="true"
+            name="publishedAt"
+          ></div>
+        </div>
+        <div class="_wrapper">
+          <button type="button" onclick="updateNews()">update</button>
+          <button type="button" onclick="resetModal()">cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

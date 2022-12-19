@@ -7,6 +7,13 @@
     <title>Home</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/home.css" />
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+      integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <nav>
@@ -23,19 +30,26 @@
         <label>email:</label> <span><%= email %> </span>
       </div>
     </div>
-
-    <form action="">
+    <form>
       <label>title</label>
-      <input type="text" name="title" />
+      <div class="input_div">
+        <div class="input" contenteditable="true" name="title"></div>
+      </div>
       <label>description</label>
-      <input type="text" name="description" />
+      <div class="input_div">
+        <div
+          class="input description"
+          contenteditable="true"
+          name="description"
+        ></div>
+      </div>
       <label>url</label>
       <input type="text" name="url" />
       <label>url To Image</label>
       <input type="text" name="urlToImage" />
       <label>published at</label>
       <input type="text" name="publishedAt" />
-      <button>add</button>
+      <button type="button" onclick="addNews()">add</button>
     </form>
 
     <script>
@@ -43,11 +57,62 @@
       localStorage.setItem("token", token);
 
       function handleLogout() {
-        localStorage.removeItem('token')
+        localStorage.removeItem("token");
+        $.ajax({
+          method: "get",
+          url: "/logout",
+          async: true,
+          success: function (response) {
+            if (response.status === true) {
+              window.location.href = "/login";
+            }
+          },
+        });
+      }
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "logout", false);
-        xhttp.send();
+      function addNews() {
+        let title = document.querySelector('[name="title"]');
+        let description = document.querySelector('[name="description"]');
+        let url = document.querySelector('[name="url"]');
+        let urlToImage = document.querySelector('[name="urlToImage"]');
+        let publishedAt = document.querySelector('[name="publishedAt"]');
+        if (
+          title.textContent === "" ||
+          description.textContent === "" ||
+          url.value === "" ||
+          urlToImage.value === "" ||
+          publishedAt.value === ""
+        ) {
+          window.alert("Field Empty");
+        } else {
+          const newsData = {
+            title: title.textContent,
+            description: description.textContent,
+            url: url.value,
+            urlToImage: urlToImage.value,
+            publishedAt: publishedAt.value,
+          };
+          $.ajax({
+            method: "post",
+            url: "/api/news/add",
+            data: newsData,
+            dataType: "json",
+            async: true,
+            success: function (response) {
+              console.log(response);
+              if (response.status === true) {
+                title.textContent = "";
+                description.textContent = "";
+                url.value = "";
+                urlToImage.value = "";
+                publishedAt.value = "";
+                alert(response.res);
+              } else {
+                alert(response.res);
+              }
+            },
+          });
+        }
       }
     </script>
   </body>

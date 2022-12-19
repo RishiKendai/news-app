@@ -9,4 +9,54 @@ body {
   background-color: #ececec;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+nav {
+  background-color: hsl(265 60% 50%);
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+}
+nav h3 {
+  color: #ececec;
+}
+nav ul {
+  display: flex;
+  gap: 1.2rem;
+  margin-left: auto;
+}
+nav ul li {
+  list-style: none;
+  color: #ecececaa;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+nav li a {
+  text-decoration: none;
+  color: #ecececaa;
+  transition: all 0.4s;
+}
+nav ul li:hover,
+nav ul li a:hover {
+  color: white;
+}
+nav ul li a.active:hover,
+nav li .active {
+  color: hsl(160 100% 40%);
+}
+
+.user_details {
+  display: flex;
+  background-color: hsl(265 60% 40% / 0.3);
+  color: hsl(265 60% 40%);
+  border-radius: 3px;
+  min-width: 80%;
+  padding: 9px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.user_details label {
+  text-transform: capitalize;
 }

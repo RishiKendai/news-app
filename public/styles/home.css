@@ -1,64 +1,78 @@
-nav {
-  background-color: hsl(265 60% 50%);
-  display: flex;
-  align-items: center;
-  padding: 12px 8px;
-}
-h3 {
-  color: #ececec;
-}
-ul {
-  display: flex;
-  gap: 1.2rem;
-  margin-left: auto;
-}
-ul li {
-  list-style: none;
-  color: #ecececaa;
-  text-transform: capitalize;
-  cursor: pointer;
-  transition: all 0.4s;
-}
-li a {
-  text-decoration: none;
-  color: #ecececaa;
-  transition: all 0.4s;
-}
-ul li:hover,
-ul li a:hover {
-  color: white;
-}
-ul li a.active:hover,
-li .active{
-    color: hsl(160 100% 40%);
-}
-
-.user_details {
-  display: flex;
-  background-color: hsl(265 60% 40% / 0.3);
-  color: hsl(265 60% 40%);
-  border-radius: 3px;
+form {
+  min-height: 100%;
+  margin: 0 auto;
+  margin-top: 2rem;
   min-width: 80%;
-  padding: 9px;
-  margin:0 auto;
-  gap: 2rem;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
 }
-.user_details label{
-    text-transform: capitalize;
+form label {
+  margin-bottom: 0.7rem;
+  text-transform: capitalize;
+  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+  font: 400 0.8em Verdana, sans-serif;
+}
+form input {
+  margin-bottom: 1.2rem;
+  padding: 8px;
+  min-height: 45px;
+  background-color: hsl(0 100% 100% / 0.65);
+  backdrop-filter: blur(5px);
+  border-radius: 2px;
+  border: 1px solid hsl(10 20% 10% / 0.2);
+  outline: none;
 }
 
-form{
-    min-height: 100%;
-    margin:0 auto;
-    margin-top: 2rem;
-    min-width: 80%;
-    display: flex;
-    flex-direction: column;
+.input_div {
+  margin-bottom: 1.2rem;
+  background-color: hsl(0 100% 100% / 0.65);
+  backdrop-filter: blur(5px);
+  border-radius: 2px;
+  border: 1px solid hsl(10 20% 10% / 0.2);
+  padding: 6px;
+  overflow: hidden;
 }
-form label{
-margin-bottom: 0.7rem;
+.input_div .input {
+  min-height: 50px;
+  max-height: 68px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  font: 400 1em sans-serif;
+  overflow-y: auto;
 }
-form input{
-    margin-bottom: 1.2rem;
-    padding: 8px;
+.input.description {
+  min-height: 68px;
+  max-height: 100px;
+}
+.input::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+  scroll-behavior: smooth;
+}
+
+.input::-webkit-scrollbar-thumb {
+  background: hsl(246 100% 70%);
+}
+
+form button {
+  background-color: hsl(246 100% 70%);
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  width: 35%;
+  font: 600 1.2em sans-serif;
+  letter-spacing: 1.2px;
+  margin: 0 auto 1rem auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.4s;
+}
+form button:active,
+form button:hover {
+  background-color: hsl(246 100% 66%);
 }
